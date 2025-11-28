@@ -88,7 +88,7 @@ function App() {
         </div>
 
         {/* Main Content Grid - LEARNING OBJECTIVES wider, center reduced, GENERATE on right */}
-        <div className="grid grid-cols-[320px_500px_140px] gap-3">
+        <div className="grid grid-cols-[320px_640px_140px] gap-3">
 
           {/* Left Column - Learning Objectives (extended right toward center) */}
           <div>
@@ -230,8 +230,8 @@ function App() {
             </GlowPanel>
           </div>
 
-          {/* Right Column - Generate panel */}
-          <div>
+          {/* Right Column - Generate panel (shifted right by its own width) */}
+          <div className="ml-[140px]">
             <GlowPanel title="GENERATE" variant="default">
               <div className="space-y-2">
                 <GenerateButton>COURSE PRESENTATION</GenerateButton>
