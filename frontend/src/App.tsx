@@ -31,7 +31,7 @@ function App() {
       <div className="p-4 max-w-[1600px] mx-auto">
 
         {/* Header Row - reduced gap (15% less) */}
-        <div className="flex justify-between items-start mb-1">
+        <div className="flex items-start mb-1">
           {/* Left - Logo and Title */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 border border-[#346E7C] rounded-md flex items-center justify-center bg-[#0a0a12]">
@@ -46,19 +46,16 @@ function App() {
             </div>
           </div>
 
-          {/* Center - Course Selector with LOAD aligned to GENERATE */}
-          <div className="flex items-center gap-3">
+          {/* Center - Course Selector and all action buttons equidistant */}
+          <div className="flex items-center gap-4 ml-8">
             <span className="text-[#F2F2F2] text-xs">SELECT COURSE:</span>
-            <select className="bg-[#0a0a12] border border-[#346E7C] text-white px-3 py-1.5 min-w-[280px] focus:outline-none rounded-md text-sm">
+            <select className="bg-[#0a0a12] border border-[#346E7C] text-white px-3 py-1.5 w-[380px] focus:outline-none rounded-md text-sm">
               <option value="">Select course...</option>
             </select>
+            {/* All buttons equidistant with gap-4 */}
             <button className="px-4 py-1.5 bg-[#12121a] border border-[#346E7C] text-[#F2F2F2] hover:bg-[#346E7C]/20 transition-colors text-xs tracking-wider rounded-md w-[70px]">
               LOAD
             </button>
-          </div>
-
-          {/* Right - Action Buttons - all on same row, same width */}
-          <div className="flex gap-2">
             <button
               onClick={() => saveCourse()}
               className="px-3 py-1.5 bg-[#12121a] border border-[#346E7C] text-[#F2F2F2] hover:bg-[#346E7C]/20 transition-colors text-xs tracking-wider rounded-md w-[70px]"
@@ -90,10 +87,10 @@ function App() {
           </div>
         </div>
 
-        {/* Main Content Grid - adjusted columns: wider left, shifted center and right */}
-        <div className="grid grid-cols-[280px_1fr_180px] gap-4">
+        {/* Main Content Grid - LEARNING OBJECTIVES wider, center reduced, GENERATE on right */}
+        <div className="grid grid-cols-[320px_500px_140px] gap-3">
 
-          {/* Left Column - Learning Objectives (wider) */}
+          {/* Left Column - Learning Objectives (extended right toward center) */}
           <div>
             <GlowPanel title="LEARNING OBJECTIVES" icon variant="default">
               <div className="space-y-2">
@@ -122,8 +119,8 @@ function App() {
             </GlowPanel>
           </div>
 
-          {/* Center Column - shifted right */}
-          <div className="space-y-3 ml-[180px]">
+          {/* Center Column - reduced width by 1/6th */}
+          <div className="space-y-3">
             {/* Course Information - thicker border, keeps original color */}
             <GlowPanel title="COURSE INFORMATION" variant="courseInfo">
               <div className="space-y-2">
@@ -233,8 +230,8 @@ function App() {
             </GlowPanel>
           </div>
 
-          {/* Right Column - Generate (shifted right) */}
-          <div className="ml-[180px]">
+          {/* Right Column - Generate panel */}
+          <div>
             <GlowPanel title="GENERATE" variant="default">
               <div className="space-y-2">
                 <GenerateButton>COURSE PRESENTATION</GenerateButton>
