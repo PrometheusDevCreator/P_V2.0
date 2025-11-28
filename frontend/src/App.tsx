@@ -28,14 +28,14 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#080810] text-white font-mono text-sm">
-      <div className="p-4 max-w-[1400px] mx-auto">
+      <div className="p-4 max-w-[1600px] mx-auto">
 
-        {/* Header Row */}
-        <div className="flex justify-between items-start mb-2">
+        {/* Header Row - reduced gap (15% less) */}
+        <div className="flex justify-between items-start mb-1">
           {/* Left - Logo and Title */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 border-2 border-[#4BACC6] rounded-md flex items-center justify-center bg-[#0a0a12]">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 text-[#4BACC6]" fill="currentColor">
+            <div className="w-10 h-10 border border-[#346E7C] rounded-md flex items-center justify-center bg-[#0a0a12]">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 text-[#346E7C]" fill="currentColor">
                 <path d="M12 2C13 4 15 6 15 9C15 11 14 12 12 13C10 12 9 11 9 9C9 6 11 4 12 2Z"/>
                 <path d="M12 13C14 14 16 16 16 19C16 21 14 22 12 22C10 22 8 21 8 19C8 16 10 14 12 13Z" opacity="0.7"/>
               </svg>
@@ -46,38 +46,34 @@ function App() {
             </div>
           </div>
 
-          {/* Center - Course Selector */}
+          {/* Center - Course Selector with LOAD aligned to GENERATE */}
           <div className="flex items-center gap-3">
             <span className="text-[#F2F2F2] text-xs">SELECT COURSE:</span>
-            <select className="bg-[#0a0a12] border-2 border-[#4BACC6] text-white px-3 py-1.5 min-w-[280px] focus:outline-none rounded-md text-sm">
+            <select className="bg-[#0a0a12] border border-[#346E7C] text-white px-3 py-1.5 min-w-[280px] focus:outline-none rounded-md text-sm">
               <option value="">Select course...</option>
             </select>
-            <button className="px-5 py-1.5 bg-[#12121a] border-2 border-[#4BACC6] text-[#F2F2F2] hover:bg-[#4BACC6]/20 transition-colors text-xs tracking-wider rounded-md min-w-[80px]">
+            <button className="px-4 py-1.5 bg-[#12121a] border border-[#346E7C] text-[#F2F2F2] hover:bg-[#346E7C]/20 transition-colors text-xs tracking-wider rounded-md w-[70px]">
               LOAD
             </button>
           </div>
 
-          {/* Right - Action Buttons */}
-          <div className="flex flex-col gap-1">
-            <div className="flex gap-2">
-              <button
-                onClick={() => saveCourse()}
-                className="px-5 py-1.5 bg-[#12121a] border-2 border-[#4BACC6] text-[#F2F2F2] hover:bg-[#4BACC6]/20 transition-colors text-xs tracking-wider rounded-md min-w-[80px]"
-              >
-                SAVE
-              </button>
-              <button className="px-5 py-1.5 bg-[#12121a] border-2 border-[#4BACC6] text-[#F2F2F2] hover:bg-[#4BACC6]/20 transition-colors text-xs tracking-wider rounded-md min-w-[80px]">
-                DELETE
-              </button>
-            </div>
-            <div className="flex justify-end">
-              <button
-                onClick={() => resetCourse()}
-                className="px-5 py-1.5 bg-[#12121a] border-2 border-[#4BACC6] text-[#F2F2F2] hover:bg-[#4BACC6]/20 transition-colors text-xs tracking-wider rounded-md min-w-[80px]"
-              >
-                RESET
-              </button>
-            </div>
+          {/* Right - Action Buttons - all on same row, same width */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => saveCourse()}
+              className="px-3 py-1.5 bg-[#12121a] border border-[#346E7C] text-[#F2F2F2] hover:bg-[#346E7C]/20 transition-colors text-xs tracking-wider rounded-md w-[70px]"
+            >
+              SAVE
+            </button>
+            <button className="px-3 py-1.5 bg-[#12121a] border border-[#346E7C] text-[#F2F2F2] hover:bg-[#346E7C]/20 transition-colors text-xs tracking-wider rounded-md w-[70px]">
+              DELETE
+            </button>
+            <button
+              onClick={() => resetCourse()}
+              className="px-3 py-1.5 bg-[#12121a] border border-[#346E7C] text-[#F2F2F2] hover:bg-[#346E7C]/20 transition-colors text-xs tracking-wider rounded-md w-[70px]"
+            >
+              RESET
+            </button>
           </div>
         </div>
 
@@ -94,10 +90,10 @@ function App() {
           </div>
         </div>
 
-        {/* Main Content Grid - center column reduced by 1/4 */}
-        <div className="grid grid-cols-[240px_0.75fr_200px] gap-3">
+        {/* Main Content Grid - adjusted columns: wider left, shifted center and right */}
+        <div className="grid grid-cols-[280px_1fr_180px] gap-4">
 
-          {/* Left Column - Learning Objectives */}
+          {/* Left Column - Learning Objectives (wider) */}
           <div>
             <GlowPanel title="LEARNING OBJECTIVES" icon variant="default">
               <div className="space-y-2">
@@ -112,11 +108,11 @@ function App() {
                         newObj[index] = e.target.value;
                         setObjectives(newObj);
                       }}
-                      className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-3 text-xs focus:outline-none focus:border-[#4BACC6] min-h-[50px]"
+                      className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-3 text-xs focus:outline-none focus:border-[#346E7C] min-h-[50px]"
                     />
                     <button
                       onClick={() => addObjective(index)}
-                      className="w-6 border-2 border-[#4BACC6]/50 rounded-md text-[#F2F2F2] hover:border-[#4BACC6] hover:bg-[#4BACC6]/20 flex items-center justify-center text-lg"
+                      className="w-6 border border-[#346E7C]/50 rounded-md text-[#F2F2F2] hover:border-[#346E7C] hover:bg-[#346E7C]/20 flex items-center justify-center text-lg"
                     >
                       +
                     </button>
@@ -126,10 +122,10 @@ function App() {
             </GlowPanel>
           </div>
 
-          {/* Center Column */}
-          <div className="space-y-3">
-            {/* Course Information - thicker border (15% more) */}
-            <GlowPanel title="COURSE INFORMATION" variant="thick">
+          {/* Center Column - shifted right */}
+          <div className="space-y-3 ml-[180px]">
+            {/* Course Information - thicker border, keeps original color */}
+            <GlowPanel title="COURSE INFORMATION" variant="courseInfo">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <label className="text-[#F2F2F2] text-xs w-20 text-right">Title:</label>
@@ -137,7 +133,7 @@ function App() {
                     type="text"
                     value={currentCourse?.title || ''}
                     onChange={(e) => updateCourse({ title: e.target.value })}
-                    className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#4BACC6]"
+                    className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#346E7C]"
                   />
                 </div>
                 <div className="flex items-center gap-2">
@@ -145,7 +141,7 @@ function App() {
                   <select
                     value={currentCourse?.level || ''}
                     onChange={(e) => updateCourse({ level: e.target.value as any })}
-                    className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#4BACC6]"
+                    className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#346E7C]"
                   >
                     <option value="">Select level...</option>
                     <option value="awareness">Awareness</option>
@@ -162,7 +158,7 @@ function App() {
                   <select
                     value={currentCourse?.thematic || ''}
                     onChange={(e) => updateCourse({ thematic: e.target.value as any })}
-                    className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#4BACC6]"
+                    className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#346E7C]"
                   >
                     <option value="">Select thematic...</option>
                     <option value="defence-security">Defence and Security</option>
@@ -182,7 +178,7 @@ function App() {
                       type="text"
                       value={currentCourse?.duration || ''}
                       onChange={(e) => updateCourse({ duration: parseInt(e.target.value) || 0 })}
-                      className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#4BACC6]"
+                      className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#346E7C]"
                     />
                   </div>
                   <div className="flex items-center gap-2 flex-1">
@@ -191,7 +187,7 @@ function App() {
                       type="text"
                       value={currentCourse?.code || ''}
                       onChange={(e) => updateCourse({ code: e.target.value })}
-                      className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#4BACC6]"
+                      className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#346E7C]"
                     />
                   </div>
                 </div>
@@ -201,31 +197,31 @@ function App() {
                     type="text"
                     value={currentCourse?.metadata?.author || ''}
                     onChange={(e) => updateCourse({ metadata: { ...currentCourse?.metadata, author: e.target.value } as any })}
-                    className="flex-1 bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#4BACC6]"
+                    className="flex-1 bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-[#346E7C]"
                   />
                 </div>
               </div>
             </GlowPanel>
 
-            {/* Course Description - height increased by 1/5 (h-24 -> h-[115px]) */}
+            {/* Course Description */}
             <GlowPanel title="COURSE DESCRIPTION" icon variant="default">
               <textarea
                 value={currentCourse?.description || ''}
                 onChange={(e) => updateCourse({ description: e.target.value })}
-                className="w-full h-[115px] bg-[#0a0a12] border-2 border-[#4BACC6]/50 rounded-md px-2 py-1 resize-none focus:outline-none focus:border-[#4BACC6] text-xs"
+                className="w-full h-[115px] bg-[#0a0a12] border border-[#346E7C]/50 rounded-md px-2 py-1 resize-none focus:outline-none focus:border-[#346E7C] text-xs"
               />
             </GlowPanel>
 
-            {/* Manager Buttons - height decreased by 1/5, no flame icon, silver grey border */}
+            {/* Manager Buttons - 3D effect with silver border */}
             <div className="grid grid-cols-3 gap-3">
               <ManagerButton title="SCALAR" subtitle="MANAGER" />
               <ManagerButton title="CONTENT" subtitle="MANAGER" />
               <ManagerButton title="LESSON" subtitle="MANAGER" />
             </div>
 
-            {/* Prometheus AI - height increased by 1/3, gold border, no red text */}
+            {/* Prometheus AI - gold border */}
             <GlowPanel title="PROMETHEUS AI" variant="gold">
-              <div className="h-[100px] bg-[#0a0a12] border-2 border-[#CC9900]/50 rounded-md">
+              <div className="h-[100px] bg-[#0a0a12] border border-[#CC9900]/50 rounded-md">
                 <input
                   type="text"
                   value={chatInput}
@@ -237,8 +233,8 @@ function App() {
             </GlowPanel>
           </div>
 
-          {/* Right Column - Generate */}
-          <div>
+          {/* Right Column - Generate (shifted right) */}
+          <div className="ml-[180px]">
             <GlowPanel title="GENERATE" variant="default">
               <div className="space-y-2">
                 <GenerateButton>COURSE PRESENTATION</GenerateButton>
@@ -262,7 +258,7 @@ function App() {
             <div className="flex items-center gap-2">
               <span className="text-[#F2F2F2]">PROGRESS:<span className="text-green-400 ml-1">15%</span></span>
               <div className="w-24 h-1.5 bg-gray-800 border border-gray-700/50 rounded">
-                <div className="h-full bg-gradient-to-r from-[#4BACC6] to-green-500 rounded" style={{ width: '15%' }}></div>
+                <div className="h-full bg-gradient-to-r from-[#346E7C] to-green-500 rounded" style={{ width: '15%' }}></div>
               </div>
             </div>
           </div>
@@ -276,9 +272,21 @@ function App() {
 }
 
 // Glowing Panel Component with variants
-function GlowPanel({ title, icon, variant = 'default', children }: { title: string; icon?: boolean; variant?: 'default' | 'thick' | 'gold'; children: React.ReactNode }) {
-  const borderColor = variant === 'gold' ? '#CC9900' : '#4BACC6';
-  const borderWidth = variant === 'thick' ? '3px' : '2px';
+function GlowPanel({ title, icon, variant = 'default', children }: { title: string; icon?: boolean; variant?: 'default' | 'courseInfo' | 'gold'; children: React.ReactNode }) {
+  // Border colors based on variant
+  const getBorderColor = () => {
+    if (variant === 'gold') return '#CC9900';
+    return '#346E7C';
+  };
+
+  // Border width: thicker for courseInfo and gold, thinner (30% reduction) for others
+  const getBorderWidth = () => {
+    if (variant === 'courseInfo' || variant === 'gold') return '2px';
+    return '1px'; // 30% reduction from 2px
+  };
+
+  const borderColor = getBorderColor();
+  const borderWidth = getBorderWidth();
 
   return (
     <div className="relative">
@@ -323,19 +331,20 @@ function GlowPanel({ title, icon, variant = 'default', children }: { title: stri
   );
 }
 
-// Manager Button Component - silver grey border, no flame icon, reduced height
+// Manager Button Component - silver border with 3D gradient effect
 function ManagerButton({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <button className="relative group w-full">
       {/* Glow effect */}
-      <div className="absolute -inset-[1px] bg-[#7F7F7F]/20 blur-[2px] rounded-md group-hover:bg-[#7F7F7F]/30 transition-colors"></div>
+      <div className="absolute -inset-[1px] bg-[#C0C0C0]/10 blur-[2px] rounded-md group-hover:bg-[#C0C0C0]/20 transition-colors"></div>
 
-      {/* Button */}
+      {/* Button with 3D effect */}
       <div
-        className="relative bg-[#0a0a12] px-3 py-3 text-center rounded-md transition-colors hover:bg-[#7F7F7F]/10"
+        className="relative px-3 py-3 text-center rounded-md transition-all hover:translate-y-[-1px]"
         style={{
-          border: '2px solid #7F7F7F',
-          background: 'linear-gradient(180deg, #12121a 0%, #0a0a12 100%)'
+          border: '1px solid #C0C0C0',
+          background: 'linear-gradient(180deg, #2a2a35 0%, #1a1a25 50%, #0a0a12 100%)',
+          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.5)'
         }}
       >
         <div className="text-xs tracking-wider text-[#F2F2F2]">{title}</div>
@@ -345,14 +354,15 @@ function ManagerButton({ title, subtitle }: { title: string; subtitle: string })
   );
 }
 
-// Generate Button Component with gradient border
+// Generate Button Component with 3D effect and silver border
 function GenerateButton({ children }: { children: React.ReactNode }) {
   return (
     <button
-      className="relative w-full py-2.5 bg-[#12121a] text-[#F2F2F2] hover:bg-[#4BACC6]/10 transition-colors text-xs tracking-wider rounded-md"
+      className="relative w-full py-2.5 text-[#F2F2F2] hover:translate-y-[-1px] transition-all text-xs tracking-wider rounded-md"
       style={{
-        border: '2px solid #4BACC6',
-        background: 'linear-gradient(180deg, #12121a 0%, #0a0a12 100%)'
+        border: '1px solid #C0C0C0',
+        background: 'linear-gradient(180deg, #2a2a35 0%, #1a1a25 50%, #0a0a12 100%)',
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.5)'
       }}
     >
       {children}
