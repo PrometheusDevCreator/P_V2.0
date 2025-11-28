@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prometheus Dark Theme Base Styles */
+@layer base {
+  :root {
+    --color-cyan-glow: #00ffff;
+    --color-flame-glow: #ff6b00;
+    --color-bg-primary: #0a0a0f;
+    --color-bg-secondary: #12121a;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-prometheus-bg-primary text-prometheus-text-primary;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-prometheus-bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-prometheus-cyan-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-prometheus-cyan-600;
+  }
+}
+
+@layer components {
+  /* Glowing border effect */
+  .glow-border {
+    @apply relative;
+    background: linear-gradient(var(--color-bg-secondary), var(--color-bg-secondary)) padding-box,
+                linear-gradient(135deg, var(--color-cyan-glow), #0099cc, #006666) border-box;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+  }
+
+  .glow-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-30;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
+  }
+
+  /* Flame button effect */
+  .flame-button {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, #ff6b00 0%, #ff0066 100%);
+  }
+
+  .flame-button::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, #ff8533 0%, #ff3385 100%);
+  }
+
+  .flame-button:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Neon text effect */
+  .neon-text {
+    text-shadow:
+      0 0 5px var(--color-cyan-glow),
+      0 0 10px var(--color-cyan-glow),
+      0 0 20px var(--color-cyan-glow);
+  }
+
+  /* Panel card style */
+  .panel-card {
+    @apply bg-prometheus-bg-card rounded-xl p-4;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow:
+      0 0 20px rgba(0, 255, 255, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Input field style */
+  .prometheus-input {
+    @apply w-full bg-prometheus-bg-tertiary border border-prometheus-border-primary rounded-lg px-4 py-2;
+    @apply text-prometheus-text-primary placeholder-prometheus-text-muted;
+    @apply focus:outline-none focus:border-prometheus-cyan-500 focus:ring-1 focus:ring-prometheus-cyan-500;
+    @apply transition-all duration-200;
+  }
+
+  .prometheus-input:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+
+  /* Select field style */
+  .prometheus-select {
+    @apply prometheus-input appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2300ffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+
+  /* Textarea style */
+  .prometheus-textarea {
+    @apply prometheus-input resize-none;
+    min-height: 100px;
+  }
+}
+
+@layer utilities {
+  /* Gradient border animation */
+  .animate-gradient-border {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Subtle pulse animation */
+  .subtle-pulse {
+    animation: subtle-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes subtle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+  }
+}

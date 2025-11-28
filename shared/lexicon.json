@@ -1,0 +1,200 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "name": "Prometheus Course Generation Lexicon",
+    "description": "Template placeholders and terminology for course generation",
+    "lastUpdated": "2024-01-01"
+  },
+  "courseLevels": [
+    {
+      "id": "awareness",
+      "name": "Awareness",
+      "description": "Basic introduction and awareness of the topic",
+      "hoursRange": { "min": 1, "max": 4 },
+      "targetAudience": "General audience with no prior knowledge"
+    },
+    {
+      "id": "foundational",
+      "name": "Foundational",
+      "description": "Foundation-level understanding of core concepts",
+      "hoursRange": { "min": 4, "max": 8 },
+      "targetAudience": "Newcomers to the field seeking structured introduction"
+    },
+    {
+      "id": "basic",
+      "name": "Basic",
+      "description": "Basic competency and practical application",
+      "hoursRange": { "min": 8, "max": 16 },
+      "targetAudience": "Entry-level professionals"
+    },
+    {
+      "id": "intermediate",
+      "name": "Intermediate",
+      "description": "Intermediate skills with practical experience",
+      "hoursRange": { "min": 16, "max": 32 },
+      "targetAudience": "Professionals with 1-3 years experience"
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced",
+      "description": "Advanced techniques and specialized knowledge",
+      "hoursRange": { "min": 32, "max": 48 },
+      "targetAudience": "Experienced professionals seeking specialization"
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "description": "Expert-level mastery and leadership capabilities",
+      "hoursRange": { "min": 48, "max": 80 },
+      "targetAudience": "Senior professionals and subject matter experts"
+    },
+    {
+      "id": "senior",
+      "name": "Senior",
+      "description": "Senior leadership and strategic decision-making",
+      "hoursRange": { "min": 80, "max": 120 },
+      "targetAudience": "Executive leadership and strategic planners"
+    }
+  ],
+  "courseThematics": [
+    {
+      "id": "defence-security",
+      "name": "Defence and Security",
+      "description": "National defence, military operations, and security frameworks",
+      "keywords": ["military", "defence", "national security", "operations", "strategy"],
+      "color": "#00ff88"
+    },
+    {
+      "id": "intelligence",
+      "name": "Intelligence",
+      "description": "Intelligence gathering, analysis, and operations",
+      "keywords": ["intelligence", "analysis", "OSINT", "HUMINT", "SIGINT"],
+      "color": "#00ccff"
+    },
+    {
+      "id": "policing",
+      "name": "Policing",
+      "description": "Law enforcement, investigation, and public safety",
+      "keywords": ["law enforcement", "investigation", "criminal justice", "public safety"],
+      "color": "#0066ff"
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "description": "Leadership development, management, and organizational skills",
+      "keywords": ["leadership", "management", "team building", "decision making"],
+      "color": "#ff6600"
+    },
+    {
+      "id": "crisis-response",
+      "name": "Crisis Response",
+      "description": "Emergency management, crisis communication, and incident response",
+      "keywords": ["emergency", "crisis", "incident response", "disaster recovery"],
+      "color": "#ff0066"
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience",
+      "description": "Organizational and personal resilience, continuity planning",
+      "keywords": ["resilience", "continuity", "recovery", "adaptation"],
+      "color": "#9933ff"
+    },
+    {
+      "id": "personal-skills",
+      "name": "Personal Skills",
+      "description": "Individual professional development and soft skills",
+      "keywords": ["communication", "negotiation", "critical thinking", "problem solving"],
+      "color": "#ffcc00"
+    },
+    {
+      "id": "user-defined",
+      "name": "User Defined",
+      "description": "Custom thematic area defined by the course creator",
+      "keywords": [],
+      "color": "#ffffff"
+    }
+  ],
+  "placeholders": {
+    "course": {
+      "{{COURSE_TITLE}}": "The title of the course",
+      "{{COURSE_CODE}}": "Unique identifier for the course",
+      "{{COURSE_VERSION}}": "Version number of the course",
+      "{{COURSE_LEVEL}}": "Difficulty level of the course",
+      "{{COURSE_THEMATIC}}": "Primary thematic area",
+      "{{COURSE_DURATION}}": "Total duration in hours",
+      "{{COURSE_DESCRIPTION}}": "Full course description",
+      "{{COURSE_OVERVIEW}}": "Brief course overview",
+      "{{TARGET_AUDIENCE}}": "Intended audience for the course"
+    },
+    "objectives": {
+      "{{LEARNING_OBJECTIVES}}": "List of learning objectives",
+      "{{TERMINAL_OBJECTIVES}}": "Terminal learning objectives",
+      "{{ENABLING_OBJECTIVES}}": "Enabling learning objectives",
+      "{{PERFORMANCE_STANDARDS}}": "Expected performance standards"
+    },
+    "content": {
+      "{{MODULE_TITLE}}": "Title of the module",
+      "{{MODULE_NUMBER}}": "Module sequence number",
+      "{{LESSON_TITLE}}": "Title of the lesson",
+      "{{LESSON_NUMBER}}": "Lesson sequence number",
+      "{{TOPIC_CONTENT}}": "Main topic content",
+      "{{KEY_POINTS}}": "Key learning points",
+      "{{ACTIVITIES}}": "Learning activities and exercises"
+    },
+    "assessment": {
+      "{{ASSESSMENT_TYPE}}": "Type of assessment",
+      "{{ASSESSMENT_CRITERIA}}": "Assessment criteria",
+      "{{PASSING_SCORE}}": "Minimum passing score",
+      "{{EVALUATION_RUBRIC}}": "Detailed evaluation rubric"
+    },
+    "metadata": {
+      "{{CREATED_DATE}}": "Course creation date",
+      "{{UPDATED_DATE}}": "Last update date",
+      "{{AUTHOR}}": "Course author name",
+      "{{REVIEWER}}": "Course reviewer name",
+      "{{ORGANIZATION}}": "Creating organization"
+    }
+  },
+  "templates": {
+    "objectiveVerbs": {
+      "awareness": ["identify", "recognize", "describe", "list", "recall"],
+      "foundational": ["explain", "summarize", "classify", "compare", "discuss"],
+      "basic": ["apply", "demonstrate", "use", "implement", "execute"],
+      "intermediate": ["analyze", "differentiate", "examine", "investigate", "organize"],
+      "advanced": ["evaluate", "assess", "critique", "justify", "recommend"],
+      "expert": ["design", "create", "develop", "formulate", "construct"],
+      "senior": ["lead", "direct", "strategize", "transform", "innovate"]
+    },
+    "assessmentTypes": [
+      "Multiple Choice Quiz",
+      "Written Assessment",
+      "Practical Exercise",
+      "Scenario-Based Assessment",
+      "Performance Evaluation",
+      "Portfolio Review",
+      "Peer Assessment",
+      "Self-Assessment",
+      "Oral Examination",
+      "Capstone Project"
+    ],
+    "deliveryMethods": [
+      "Instructor-Led Training (ILT)",
+      "Virtual Instructor-Led Training (VILT)",
+      "Self-Paced eLearning",
+      "Blended Learning",
+      "On-the-Job Training",
+      "Workshop",
+      "Seminar",
+      "Simulation-Based Training",
+      "Mobile Learning"
+    ]
+  },
+  "statusCodes": {
+    "draft": { "code": "DRAFT", "label": "Draft", "color": "#666666" },
+    "inProgress": { "code": "IN_PROGRESS", "label": "In Progress", "color": "#ffcc00" },
+    "review": { "code": "REVIEW", "label": "Under Review", "color": "#ff9900" },
+    "approved": { "code": "APPROVED", "label": "Approved", "color": "#00cc66" },
+    "published": { "code": "PUBLISHED", "label": "Published", "color": "#00ffff" },
+    "archived": { "code": "ARCHIVED", "label": "Archived", "color": "#999999" }
+  }
+}
